@@ -43,9 +43,10 @@ npm install
 
 ## 3. Setup Environment Variables:
 Create a file named .env.local in the root directory and configure your API keys:
-NEWSAPI_KEY=your_newsapi_key_here
-FACTCHECK_API_KEY=your_google_factcheck_key_here
-SAFEBROWSING_API_KEY=your_google_safebrowsing_key_here
+
+# NEWSAPI_KEY=your_newsapi_key_here
+# FACTCHECK_API_KEY=your_google_factcheck_key_here
+# SAFEBROWSING_API_KEY=your_google_safebrowsing_key_here
 
 ## 4. Run the development server:
 npm run dev
