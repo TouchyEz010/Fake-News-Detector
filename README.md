@@ -1,30 +1,45 @@
-# Fake News Detector (MVP v2)
-Next.js + TypeScript + NewsAPI demo that searches for articles and applies basic heuristics to estimate misinformation risk.
-Supports **direct URL analysis** (paste a link) in addition to NewsAPI search.
+🕵️ Fake News Detector
+A web application built with Next.js, React, and TypeScript designed to detect and assess news credibility, verify factual claims, and inspect link safety in real time.
+🌐 Live Demo
+👉 Try it here: (https://fake-news-detector-lime-five.vercel.app)
+⚡ Key Features
+News Credibility Analysis: Evaluates news sources, headlines, and articles using heuristics for risk assessment (Low, Medium, High).
+Google Fact Check Tools API Integration: Cross-references claims against verified fact-checking organizations.
+Google Safe Browsing API: Inspects URLs for phishing, malware, and malicious web indicators.
+Direct URL & NewsAPI Search: Search by keywords or input a direct URL for instant automated scanning.
+🛠️ Tech Stack
+Framework: Next.js 14 (App Router)
+Language: TypeScript
+Styling: Tailwind CSS / Modern CSS Modules
+APIs:
+NewsAPI
+Google Fact Check Tools API
+Google Safe Browsing API
+Deployment: Vercel
+🚀 Getting Started (Local Development)
+Prerequisites
+Node.js (v18 or higher recommended)
+npm or yarn
+1. Clone the repository
+git clone https://github.com/TouchyEz010/Fake-News-Detector.git
+cd Fake-News-Detector
 
-## Features
-- Search via NewsAPI (`/api/search` proxy, keeps your key server-side)
-- **NEW:** Paste a URL (http/https) -> `/api/analyze-url` fetches the page and extracts OpenGraph/meta
-- Heuristic scoring:
-  - Source reputation (trusted/low-trust lists)
-  - Clickbait features (phrases, exclamation count, ALL-CAPS ratio)
-  - Sensational wording in description
-- Risk band: Low / Medium / High + signal explanations
 
-## Getting Started
-1. Create `.env.local`:
-   ```bash
-   NEWSAPI_KEY=your-newsapi-key
-   ```
-   (URL analysis does not require this key, but NewsAPI search does.)
-2. Install and run:
-   ```bash
-   npm install
-   npm run dev
-   ```
-   Open http://localhost:3001
+2. Install dependencies
+npm install
 
-## Notes
-- Some sites block bots or require JS; the URL analyzer extracts what is available.
-- Update `lib/credibility.ts` to customize domain lists and scoring.
-- Add caching/rate limits for production.
+
+3. Setup Environment Variables
+Create a file named .env.local in the root directory and configure your API keys:
+NEWSAPI_KEY=your_newsapi_key_here
+FACTCHECK_API_KEY=your_google_factcheck_key_here
+SAFEBROWSING_API_KEY=your_google_safebrowsing_key_here
+
+
+4. Run the development server
+npm run dev
+
+
+Open http://localhost:3001 with your browser to see the application.
+⚠️ Disclaimer
+This tool uses heuristics (source reputation, wording patterns, clickbait indicators) and available fact-checking databases. It is intended for educational and analytical purposes and should not be considered an absolute authority on truth.
